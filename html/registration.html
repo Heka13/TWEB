@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../js/jQuery.js" type="text/javascript"></script>
+  <script src="../js/dropzone.js" ></script>
+  <script src="../js/registration.js" ></script>
+  <title>TWEB Progetto</title>
+</head>
+
+<body>
+  <div>
+    <form action="../php/registration.php" method="post" enctype="multipart/form-data" id="mydropzone" >
+        User:<input name="username" type="text" value=""/>
+        Password:<input name="password" type="password" value=""/>
+        Carica immagine:<div id="dropzonePreview"></div>
+        <input id="submit" type="submit" value="Register" name="submit">
+    </form>
+  </div>
+</html>
