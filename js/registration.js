@@ -12,25 +12,28 @@ window.onload = function() {
     previewsContainer: '#dropzonePreview',
     clickable: false,
 
-  init: function() {
-    console.log("iniziato init.......");
-    var drpz = this;
-    this.on("addedfile", function () {
+    init: function() {
+      console.log("iniziato init.......");
+      var drpz = this;
+      this.on("addedfile", function () {
 
-       $("#submit").on('click',function(e) {
-         e.preventDefault();
-         e.stopPropagation();
-         drpz.processQueue();
-       })
-    })
+        $("#submit").on('click',function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          drpz.processQueue();
+        })
+      })
 
-    this.on('success', function(file, response) {
-      console.log(response);
-      imgName = file.name;
-      if(response == "true"){
-        window.location.replace("../user/myPage.php");
-      }
-    })
-  }
+      this.on('success', function(file, response) {
+        console.log(response);
+        imgName = file.name;
+        if(response == "true"){
+          window.location.replace("../user/myPage.php");
+        }
+        else {
+          console.log("response: --- "+response);
+        }
+      })
+    }
   })
 }

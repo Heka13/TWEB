@@ -24,7 +24,6 @@ window.onload = function() {
 
     this.on('success', function(file, response) {
       imgName = file.name;
-
       if(response == "true"){
         window.location.replace("../user/structPage.php");
       }
