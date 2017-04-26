@@ -8,9 +8,9 @@
 
   $pathImg = "/TWEB/img/default/default.jpg";
   $target_dir = "uploads/";
-  $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-  if(is_uploaded_file($_FILES["file"]["tmp_name"])){
+  if((isset($_FILES["file"]["name"]))&&(is_uploaded_file($_FILES["file"]["tmp_name"]))){
+    $target_file = $target_dir . basename($_FILES["file"]["name"]);
     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
     $pathImg = "/TWEB/php/".$target_file;
     $query = "INSERT INTO registration (name,password,image) VALUES  ('$username','$password', '$pathImg')";

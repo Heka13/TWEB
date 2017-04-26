@@ -59,8 +59,10 @@
   ?>
   </div>
   <div class="slideButtBox">
+  <?php if($i>0){ ?>
   <button class="slideShowButtLeft" onclick="scrollRev(-1)">&#10094;</button>
   <button class="slideShowButtRight" onclick="scrollRev(+1)">&#10095;</button>
+  <?php  }?>
   </div>
   <script src="../js/slideShow.js" type="text/javascript"></script>
 </body>

@@ -18,7 +18,8 @@ function refreshReviews (){
     var text = '';
     $.each(obj, function(i, value) {
       text+='<div class="revBox nRev'+i+'">';
-      text+=' <div class="infoRev"><div class="reviewerName">'+value.nameVisitor+'</div><div class="reviewerDate">'+value.insertDate+'</div></div>';
+      text+=' <div class="infoRev"><div class="reviewerName">'+value.nameVisitor+
+            '</div><div class="reviewerDate">'+value.insertDate+'</div></div>';
       text+=' <div class="revComment">'+value.review+'</div>';
       text+=' </div>';
     });

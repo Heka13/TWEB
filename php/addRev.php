@@ -9,7 +9,8 @@ $date = date("Y-m-d", strtotime("now"));
 $time = date("H:i:s", strtotime("now"));;
 $conn = connOpen();
 
-$query = "INSERT INTO reviews (nameVisitor,nameStructure,review,insertDate,insertTime) VALUES  ('$nameVisitor','$nameStructure', '$review','$date','$time')";
+$query = "INSERT INTO reviews (nameVisitor,nameStructure,review,insertDate,insertTime)
+          VALUES  ('$nameVisitor','$nameStructure', '$review','$date','$time')";
 if($conn->query($query)){
   echo "true";
 }
