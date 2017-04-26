@@ -9,7 +9,7 @@
   <script src="../js/jQuery.js" type="text/javascript"></script>
   <link href="../css/buttons.css" rel="stylesheet" type="text/css">
   <link href="../css/myPage.css" rel="stylesheet" type="text/css">
-
+  <link href="../css/buttons.css" rel="stylesheet" type="text/css">
   <title>TWEB Progetto</title>
 </head>
 
@@ -21,6 +21,9 @@
     <div id="add">
       <a href="../html/addStructure.html">Add</a>
     </div>
+    <form action="../php/logout.php" method="POST" id="log">
+      <input type="submit" value="Logout" class="blueButton"/>
+    </form>
   </div>
  <div>
 
@@ -39,9 +42,6 @@
       WHERE nameVisitor='".$_SESSION["name"]."'
       ";
     $ris = $conn->query($query);
-    // $row =$ris->fetchAll();
-
-  //  echo $row[1][1];
   ?>
   <div id="slideBox">
   <?php

@@ -1,6 +1,6 @@
 <?php
-  session_start();
   include '../php/connection.php';
+  session_start();
  ?>
 <!DOCTYPE html>
 <html>
@@ -16,37 +16,39 @@
  <div>
    <?=$_SESSION['nameStruct'];?>
  </div>
-<div>
+ <form action="../php/back.php" method="POST" id="log">
+  <input type="submit" value="Back" class="blueButton"/>
+ </form>
+ <div>
   <img src="<?=$_SESSION['imageStruct'];?>" alt="img not found" id="personalImg"/>
-</div>
+ </div>
 
-<div id="review-container">
-  Inserisci commento:
-  <div id="addRev" class="addRev">
-    <input name="rev" type="text" value=""/>
-    <input name="public" type="button" value="Public" class="blueButton"/>
-  </div>
-  <div id="pastRev">
+ <div id="review-container">
+   Inserisci commento:
+   <div id="addRev" class="addRev">
+     <input name="rev" type="text" value=""/>
+     <input name="public" type="button" value="Public" class="blueButton"/>
+   </div>
 
-    <?php
+   <div id="pastRev">
+     <?php
+        $conn = connOpen();
+        $query = "SELECT nameVisitor,review,insertDate,insertTime FROM reviews
+                  WHERE nameStructure = '".$_SESSION["nameStruct"]."'
+                  ORDER BY insertTime DESC";
+        foreach ($conn->query($query) as $result) {
+     ?>
+     <div>
+       <?php
+         echo $result['nameVisitor']." ".$result['review'];
+       ?>
+     </div>
 
-    $conn = connOpen();
-    $query = "SELECT nameVisitor,review,insertDate,insertTime FROM reviews WHERE nameStructure = '".$_SESSION["nameStruct"]."' ORDER BY insertTime DESC";
-      foreach ($conn->query($query) as $result) {
+     <?php
+        }
+        connClose($conn);
       ?>
-      <div>
-        <?php
-          echo $result['nameVisitor']." ".$result['review'];
-         ?>
-      </div>
-      <?php
-    }
-
-    connClose($conn);
-
-  ?>
-
-  </div>
+    </div>
 </div>
 
 <script src="../js/addRev.js" type="text/javascript"></script>

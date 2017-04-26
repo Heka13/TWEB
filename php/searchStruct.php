@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+session_start();
 $searched = $_POST['searchStruct'];
 $conn = connOpen();
 $query = "SELECT name,address,image FROM structure WHERE name = '".$searched."' ";
