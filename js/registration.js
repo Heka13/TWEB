@@ -1,7 +1,7 @@
 window.onload = function() {
 
   var imgName = "";
-
+Dropzone.autoDiscover = false; //nuovo
   var dropz = new Dropzone("#mydropzone", {
     url: '../php/registration.php',
     paramName: 'file',
@@ -9,6 +9,8 @@ window.onload = function() {
     addRemoveLinks: true,
     autoProcessQueue: false,
     autoDiscover: false,
+    thumbnailWidth:50,
+    thumbnailHeight:50,
     previewsContainer: '#dropzonePreview',
     clickable: false,
 
@@ -36,4 +38,5 @@ window.onload = function() {
       })
     }
   })
+
 }
