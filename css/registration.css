@@ -15,13 +15,16 @@ body{
   margin-top: 100px;
 }
 
-#mydropzone, #dropzonePreview{
-  display: block;
+#mydropzone{
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 20%;
   color: black;
   padding: 10px 15px;
-  text-decoration: none;
-  padding-top: 0px;
   line-height: 50px;
+  border: 3px solid #000;
+  border-color: white;
+
 }
 
 .fields{
@@ -29,14 +32,19 @@ body{
   margin: auto;
 }
 
-/*#dropzonePreview{
-  font-size: 30px;
+#dropzonePreview{
+  font-size: 20px;
+  text-align: center;
   background-color: white;
   border:1px solid #15d615;
   border-color: black;
-  width: 50px;
-  height: 50px;
-}*/
+}
+
+#submit, #back{
+  margin-left: 20%;
+  margin-right: 5%;
+}
+
 
 .dz-details, .dz-success-mark, .dz-error-mark{
   display: none;

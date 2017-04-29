@@ -26,7 +26,6 @@
     </form>
   </div>
  <div>
-
    <?=$_SESSION['name']?>
  </div>
 <div>

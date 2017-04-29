@@ -4,6 +4,14 @@
   margin-top: 50px;
 }
 
+.navbar{
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #248f24;
+    width: 100%;
+    height: 50px;
+}
+
 .slideShow{
   width: 150px;
   height: 150px;

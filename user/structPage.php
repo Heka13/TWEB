@@ -17,7 +17,7 @@
    <?=$_SESSION['nameStruct'];?>
  </div>
  <form action="../php/back.php" method="POST" id="log">
-  <input type="submit" value="Back" class="blueButton"/>
+  <input type="submit" value="Back" class="myButton"/>
  </form>
  <div>
   <img src="<?=$_SESSION['imageStruct'];?>" alt="img not found" id="personalImg"/>
