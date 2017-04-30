@@ -15,22 +15,28 @@
 
 <body>
   <div class="navbar">
-    <form action="../php/searchStruct.php" method="post" id="search">
-      Search<input name="searchStruct" type="text" value=""/>
-    </form>
-    <div id="add">
-      <a href="../html/addStructure.html">Add</a>
-    </div>
+    <img src="../img/logoTweb.jpg"  id="logoImg"/>
     <form action="../php/logout.php" method="POST" id="log">
-      <input type="submit" value="Logout" class="blueButton"/>
+      <input type="submit" value="Logout" class="myButton"/>
+    </form>
+    <form action="../html/addStructure.html" method="post" id="add">
+      <input type="submit" value="Add" class="myButton"/>
+    </form>
+    <form action="../php/searchStruct.php" method="post" id="search">
+      <input name="searchStruct" type="text" value="Structure name"/>
+      <input type="submit" value="Search" class="myButton"/>
     </form>
   </div>
- <div>
-   <?=$_SESSION['name']?>
- </div>
-<div>
-  <img src="<?=$_SESSION['image']?>" alt="img not found" id="personalImg"/>
-</div>
+  <div class="portrait">
+    <div id="info"><?=$_SESSION['name']?></div>
+  </div>
+  <div class="portrait">
+    <img src="../img/framePersonalImg.jpeg" id="frameImg"/>
+    <img src="<?=$_SESSION['image']?>" alt="img not found" id="personalImg"/>
+  </div>
+
+  <img src="../img/line-separator-green.png" id="separatorImg"/>
+
   <?php
     $conn= connOpen();
     $query=
@@ -42,27 +48,28 @@
       ";
     $ris = $conn->query($query);
   ?>
-  <div id="slideBox">
+  <div class="portrait">
   <?php
   $i = 0;
   while($row =$ris->fetchObject()){
   ?>
     <div class="slideShow" id="myRew<?= $i ?>">
       <img src="<?= $row->image ?>" />
-      <p> <?= $row->review ?></p>
+      <p id="rev"> <?= $row->review ?></p>
     </div>
   <?php
   $i++;
   }
   connClose($conn);
   ?>
-  </div>
-  <div class="slideButtBox">
+  <div id="slideButtBox">
   <?php if($i>0){ ?>
   <button class="slideShowButtLeft" onclick="scrollRev(-1)">&#10094;</button>
   <button class="slideShowButtRight" onclick="scrollRev(+1)">&#10095;</button>
   <?php  }?>
   </div>
+  </div>
+
   <script src="../js/slideShow.js" type="text/javascript"></script>
 </body>
 
