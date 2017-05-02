@@ -5,21 +5,22 @@
   <script src="../js/jQuery.js" type="text/javascript"></script>
   <script src="../js/dropzone.js" ></script>
   <script src="../js/registration.js" ></script>
-  <link href="../css/registration.css" rel="stylesheet" type="text/css">
+  <link href="../css/add.css" rel="stylesheet" type="text/css">
   <link href="../css/buttons.css" rel="stylesheet" type="text/css">
   <title>TWEB Progetto</title>
 </head>
 
 <body>
-  <div id="back">
-    <form action="../php/back.php" method="POST">
+  <div class="navbar">
+    <img src="../img/logoTweb.jpg"  id="logoImg"/>
+    <form action="../php/back.php" method="POST" id="back">
         <input type="submit" value="Back" class="myButton"/>
     </form>
   </div>
     <form action="../php/registration.php" method="post" enctype="multipart/form-data" id="mydropzone" >
-        <div class="fields"> Name: <input name="username" type="text" value=""/> </div>
+        <div class="fields"> Name: <input name="username" type="text" value=""/></div>
         <div class="fields">Password: <input name="password" type="password" value=""/></div>
         <div id="dropzonePreview"><div class="dz-message" data-dz-message><span>Drop Here</span></div></div>
-        <input id="submit" type="submit" value="Register" name="submit" class="myButton">
+        <input id="register" type="submit" value="Register" name="submit" class="myButton">
     </form>
 </html>

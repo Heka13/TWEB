@@ -6,7 +6,7 @@
   $password = $_POST['password'];
   $conn = connOpen();
 
-  $pathImg = "/TWEB/img/default/default.jpg";
+  $pathImg = "/TWEB/img/default/defaultperson.png";
   $target_dir = "uploads/";
 
   if((isset($_FILES["file"]["name"]))&&(is_uploaded_file($_FILES["file"]["tmp_name"]))){

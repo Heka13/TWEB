@@ -15,7 +15,6 @@ Dropzone.autoDiscover = false; //nuovo
     clickable: false,
 
     init: function() {
-      console.log("iniziato init.......");
       var drpz = this;
       this.on("addedfile", function () {
 
@@ -27,7 +26,6 @@ Dropzone.autoDiscover = false; //nuovo
       })
 
       this.on('success', function(file, response) {
-        console.log(response);
         imgName = file.name;
         if(response == "true"){
           window.location.replace("../user/myPage.php");
