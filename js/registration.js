@@ -1,7 +1,7 @@
 window.onload = function() {
 
   var imgName = "";
-
+Dropzone.autoDiscover = false; //nuovo
   var dropz = new Dropzone("#mydropzone", {
     url: '../php/registration.php',
     paramName: 'file',
@@ -9,28 +9,32 @@ window.onload = function() {
     addRemoveLinks: true,
     autoProcessQueue: false,
     autoDiscover: false,
+    thumbnailWidth:50,
+    thumbnailHeight:50,
     previewsContainer: '#dropzonePreview',
     clickable: false,
 
-  init: function() {
-    console.log("iniziato init.......");
-    var drpz = this;
-    this.on("addedfile", function () {
+    init: function() {
+      var drpz = this;
+      this.on("addedfile", function () {
 
-       $("#submit").on('click',function(e) {
-         e.preventDefault();
-         e.stopPropagation();
-         drpz.processQueue();
-       })
-    })
+        $("#submit").on('click',function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          drpz.processQueue();
+        })
+      })
 
-    this.on('success', function(file, response) {
-      console.log(response);
-      imgName = file.name;
-      if(response == "true"){
-        window.location.replace("../user/myPage.php");
-      }
-    })
-  }
+      this.on('success', function(file, response) {
+        imgName = file.name;
+        if(response == "true"){
+          window.location.replace("../user/myPage.php");
+        }
+        else {
+          console.log("response: --- "+response);
+        }
+      })
+    }
   })
+
 }

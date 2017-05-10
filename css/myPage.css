@@ -1,5 +1,108 @@
+body{
+  background-image: url("../img/tweb-back-mypage.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.navbar{
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #248f24;
+    width: 100%;
+    height: 50px;
+}
+
+#logoImg{
+  width: 6%;
+  height: 50px;
+  float: left;
+}
+
+#search, #log, #add{
+   float: right;
+   display: block;
+   color: white;
+   padding: 10px 15px;
+   text-decoration: none;
+   border-right: 1px solid #bbb;
+   padding-top: 0px;
+   line-height: 50px;
+}
+
+.portrait{
+  position: relative;
+
+}
+
 #personalImg{
-  width: 150px;
+  position: absolute;
+  width: 151px;
+  height: 120px;
+  margin-left: 5%;
+  margin-top: 2%;
+  padding-left: 25px;
+  padding-top: 22px;
+}
+#frameImg{
+  position: absolute;
+  width: 200px;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+#info{
+  position: absolute;
+  font-size: 25px;
+  font-family: sans-serif;
+  float: right;
+  margin-top: 5%;
+  padding-left: 290px;
+  padding-top: 5px;
+}
+
+.lineSeparator {
+  height: 30px;
+  border-style: solid;
+  border-color: green;
+  border-width: 4px 0 0 0;
+  border-radius: 20px;
+  margin-top: 18%;
+}
+
+.lineSeparator:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: greenyellow;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+.slideShow{
+ height: 150px;
+}
+
+.slideShow img{
+  padding-left: 43%;
+  width: 160px;
   height: 150px;
-  margin-top: 50px;
+}
+
+#rev{
+  border: 3px solid green;
+  margin-top: 30px;
+  padding: 10px;
+  margin: 30px;
+}
+
+#slideButtBox{
+  margin-left: 45%;
+  padding-left: 20px;
+  padding-top: 4px;
 }
