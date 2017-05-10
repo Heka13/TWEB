@@ -6,7 +6,7 @@
   $address = $_POST['addr'];
   $conn = connOpen();
 
-  $pathImg = "/TWEB/img/default/default.jpg";
+  $pathImg = "/TWEB/img/default/defaultstructure.jpeg";
   $target_dir = "uploadsStruct/";
   $target_file = $target_dir . basename($_FILES["file"]["name"]);
 

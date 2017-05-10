@@ -4,7 +4,9 @@ session_start();
 
 $arr = array();
 $conn = connOpen();
-$query = "SELECT nameVisitor,review,insertDate,insertTime FROM reviews WHERE nameStructure = '".$_SESSION["nameStruct"]."' ORDER BY insertTime DESC";
+$query = "SELECT nameVisitor,review,insertDate,insertTime
+          FROM reviews
+          WHERE nameStructure = '".$_SESSION["nameStruct"]."' ORDER BY insertTime DESC";
   foreach ($conn->query($query) as $result) {
     $parzial = array();
     $parzial['nameVisitor'] = $result['nameVisitor'];

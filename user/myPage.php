@@ -9,7 +9,6 @@
   <script src="../js/jQuery.js" type="text/javascript"></script>
   <link href="../css/buttons.css" rel="stylesheet" type="text/css">
   <link href="../css/myPage.css" rel="stylesheet" type="text/css">
-  <link href="../css/buttons.css" rel="stylesheet" type="text/css">
   <title>TWEB Progetto</title>
 </head>
 
@@ -35,39 +34,39 @@
     <img src="<?=$_SESSION['image']?>" alt="img not found" id="personalImg"/>
   </div>
 
-  <img src="../img/line-separator-green.png" id="separatorImg"/>
+  <div class="lineSeparator"></div>
 
   <?php
     $conn= connOpen();
     $query=
-      "SELECT review , image
-      FROM reviews
-      INNER JOIN structure
-      ON reviews.nameStructure=structure.name
-      WHERE nameVisitor='".$_SESSION["name"]."'
-      ";
+            "SELECT review , image
+            FROM reviews
+            INNER JOIN structure
+            ON reviews.nameStructure=structure.name
+            WHERE nameVisitor='".$_SESSION["name"]."'
+            ";
     $ris = $conn->query($query);
   ?>
   <div class="portrait">
-  <?php
-  $i = 0;
-  while($row =$ris->fetchObject()){
-  ?>
+    <?php
+      $i = 0;
+      while($row =$ris->fetchObject()){
+    ?>
     <div class="slideShow" id="myRew<?= $i ?>">
       <img src="<?= $row->image ?>" />
       <p id="rev"> <?= $row->review ?></p>
     </div>
-  <?php
-  $i++;
-  }
-  connClose($conn);
-  ?>
-  <div id="slideButtBox">
-  <?php if($i>0){ ?>
-  <button class="myButton" onclick="scrollRev(-1)">&#10094;</button>
-  <button class="myButton" onclick="scrollRev(+1)">&#10095;</button>
-  <?php  }?>
-  </div>
+    <?php
+      $i++;
+      }
+      connClose($conn);
+    ?>
+    <div id="slideButtBox">
+    <?php if($i>0){ ?>
+    <button class="myButton" onclick="scrollRev(-1)">&#10094;</button>
+    <button class="myButton" onclick="scrollRev(+1)">&#10095;</button>
+    <?php } ?>
+    </div>
   </div>
 
   <script src="../js/slideShow.js" type="text/javascript"></script>

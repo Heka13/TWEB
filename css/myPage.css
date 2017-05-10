@@ -1,5 +1,5 @@
 body{
-  background-image: url("../img/tweb-back-mypage.jpeg");
+  background-image: url("../img/tweb-back-mypage.jpg");
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
@@ -64,8 +64,24 @@ body{
   padding-top: 5px;
 }
 
-#separatorImg{
-  margin-top: 15%;
+.lineSeparator {
+  height: 30px;
+  border-style: solid;
+  border-color: green;
+  border-width: 4px 0 0 0;
+  border-radius: 20px;
+  margin-top: 18%;
+}
+
+.lineSeparator:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: greenyellow;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
 }
 
 .slideShow{
@@ -74,7 +90,7 @@ body{
 
 .slideShow img{
   padding-left: 43%;
-  width: 150px;
+  width: 160px;
   height: 150px;
 }
 
@@ -86,6 +102,7 @@ body{
 }
 
 #slideButtBox{
-  margin-left: 44.5%;
+  margin-left: 45%;
   padding-left: 20px;
+  padding-top: 4px;
 }

@@ -13,21 +13,26 @@
 </head>
 
 <body>
- <div>
-   <?=$_SESSION['nameStruct'];?>
- </div>
- <form action="../php/back.php" method="POST" id="log">
-  <input type="submit" value="Back" class="myButton"/>
- </form>
- <div>
-  <img src="<?=$_SESSION['imageStruct'];?>" alt="img not found" id="personalImg"/>
- </div>
+  <div class="navbar">
+    <img src="../img/logoTweb.jpg"  id="logoImg"/>
+    <form action="../php/back.php" method="POST" id="back">
+      <input type="submit" value="Back" class="myButton"/>
+    </form>
+  </div>
 
- <div id="review-container">
-   Inserisci commento:
-   <div id="addRev" class="addRev">
-     <input name="rev" type="text" value=""/>
-     <input name="public" type="button" value="Public" class="blueButton"/>
+  <div class="portrait">
+    <div id="info"><?=$_SESSION['nameStruct']?></div>
+  </div>
+  <div class="portrait">
+    <img src="../img/framePersonalImg.jpeg" id="frameImg"/>
+    <img src="<?=$_SESSION['imageStruct']?>" alt="img not found" id="structImg"/>
+  </div>
+
+ <div class="review-container">
+   <div id="ins">Add review (max 250 chars):</div>
+   <div id="addRev">
+     <input name="rev" type="text" value="" id="textRev"/>
+     <input name="public" type="button" value="Public" class="myButton"/>
    </div>
 
    <div id="pastRev">
@@ -38,9 +43,15 @@
                   ORDER BY insertTime DESC";
         foreach ($conn->query($query) as $result) {
      ?>
-     <div>
+     <div id="nameVisitor">
+       From: 
        <?php
-         echo $result['nameVisitor']." ".$result['review'];
+         echo $result['nameVisitor'];
+       ?>
+     </div>
+     <div id="rev">
+       <?php
+         echo $result['review'];
        ?>
      </div>
 
