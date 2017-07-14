@@ -13,14 +13,29 @@
 <body>
   <div class="navbar">
     <img src="../img/logoTweb.jpg"  id="logoImg"/>
-      <form action="../php/back.php" method="POST" id="back">
+    <form action="../php/back.php" method="POST" id="back">
         <input type="submit" value="Back" class="myButton"/>
-      </form>
+    </form>
   </div>
+
     <form action="../php/addStructure.php" method="post" enctype="multipart/form-data" id="mydropzone" >
-        <div class="fields">Structure: <input name="struct" type="text" value=""/></div>
-        <div class="fields">Address: <input name="addr" type="text" value=""/></div>
-        <div id="dropzonePreview"><div class="dz-message" data-dz-message><span>Drop Here</span></div></div>
+      <div id="info">
+      <div class="single-info">
+      <div class="left infop">Structure:</div><div class="left fields"><input name="struct" type="text" placeholder="structure"/></div>
+      <div class="clear-fix"></div>
+      </div>
+      <div class="single-info">
+      <div class="left infop">Address:</div><div class="left fields"><input name="addr" type="text" placeholder="address"/></div>
+      <div class="clear-fix"></div>
+      </div>
+      <div class="single-info">
+      <div class="left infop">Image here:</div></div>
+      <div class="clear-fix"></div>
+      </div>
+      <div class="clear-fix"></div>
+    </div>
+    <div class="clear-fix"></div>
+        <div id="dropzonePreview"><div class="dz-message" data-dz-message><span>&nbsp</span></div></div>
         <input id="add" type="submit" value="Add" name="add" class="myButton">
     </form>
 

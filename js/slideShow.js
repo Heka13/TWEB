@@ -14,6 +14,7 @@ function showDivs(n) {
       for (i = 0; i < x.length; i++) {
           x[i].style.display = "none";
       }
+      console.log("x.lenght: "+x.length + "\n n: "+n + "\nslideindex-1: "+(slideIndex-1));
       x[slideIndex-1].style.display = "block";
     }
  }

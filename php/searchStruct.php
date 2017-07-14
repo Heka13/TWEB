@@ -9,7 +9,6 @@ $queryName = "SELECT name FROM structure WHERE name = '$searched'";
 
 $counter = 0;
 foreach ($conn->query($queryName) as $name) {
-      $_SESSION['name'] = $name['name'];
       $counter++;
 }
 connClose($conn);

@@ -1,13 +1,15 @@
 window.onload = function() {
 
-  $('#addRev input[name=public][type=button]').on("click",function(){
+  $('#addRev').on("click","input[name=public][type=button]",function(){
     var tb = $(this);
-    var addRev = tb.closest(".addRev");
+    var addRev = tb.closest("#addRev");
     var rev = addRev.find("input[name=rev][type=text]");
+    console.log("- "+rev.val());
     $.post("../php/addRev.php",{rev: rev.val()},function(data){
       if(data == "true"){
         refreshReviews();
       }
+      else console.log(data);
     });
   });
 

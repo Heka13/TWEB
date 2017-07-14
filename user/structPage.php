@@ -13,6 +13,8 @@
 </head>
 
 <body>
+  <div class="background-container">
+  </div>
   <div class="navbar">
     <img src="../img/logoTweb.jpg"  id="logoImg"/>
     <form action="../php/back.php" method="POST" id="back">
@@ -20,21 +22,29 @@
     </form>
   </div>
 
-  <div class="portrait">
-    <div id="info"><?=$_SESSION['nameStruct']?></div>
-  </div>
-  <div class="portrait">
-    <img src="../img/framePersonalImg.jpeg" id="frameImg"/>
-    <img src="<?=$_SESSION['imageStruct']?>" alt="img not found" id="structImg"/>
+  <div class="container">
+    <div class="content">
+
+      <div class="box">
+        <div class="portrait left">
+          <img src="<?=$_SESSION['imageStruct'];?>" alt="img not found" id="personalImg"/>
+        </div>
+  <div class="info left">
+    <div id="info">
+      <div class="single-info">
+      <div class="left infop">Nome:</div><div class="left"><?=$_SESSION['nameStruct'];?></div>
+      <div class="clear-fix"></div>
+      </div></div>
   </div>
 
+<div class="box">
  <div class="review-container">
    <div id="ins">Add review (max 250 chars):</div>
    <div id="addRev">
      <input name="rev" type="text" value="" id="textRev"/>
      <input name="public" type="button" value="Public" class="myButton"/>
    </div>
-
+ </div>
    <div id="pastRev">
      <?php
         $conn = connOpen();
@@ -63,6 +73,8 @@
 </div>
 
 <script src="../js/addRev.js" type="text/javascript"></script>
+</div>
+</div>
 </body>
 
 </html>

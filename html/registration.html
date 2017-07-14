@@ -18,9 +18,23 @@
     </form>
   </div>
     <form action="../php/registration.php" method="post" enctype="multipart/form-data" id="mydropzone" >
-        <div class="fields">Name: <input name="username" type="text" value=""/></div>
-        <div class="fields">Password: <input name="password" type="password" value=""/></div>
-        <div id="dropzonePreview"><div class="dz-message" data-dz-message><span>Drop Here</span></div></div>
+      <div id="info">
+      <div class="single-info">
+      <div class="left infop">Name:</div><div class="left fields"><input name="username" type="text" placeholder="name"/></div>
+      <div class="clear-fix"></div>
+      </div>
+      <div class="single-info">
+      <div class="left infop">Password:</div><div class="left fields"><input name="password" type="text" placeholder="password"/></div>
+      <div class="clear-fix"></div>
+      </div>
+      <div class="single-info">
+      <div class="left infop">Image here:</div></div>
+      <div class="clear-fix"></div>
+      </div>
+      <div class="clear-fix"></div>
+    </div>
+    <div class="clear-fix"></div>
+        <div id="dropzonePreview"><div class="dz-message" data-dz-message><span>&nbsp</span></div></div>
         <input id="register" type="submit" value="Register" name="submit" class="myButton">
     </form>
 </html>

@@ -24,7 +24,7 @@
       <input type="submit" value="Add" class="myButton"/>
     </form>
     <form action="../php/searchStruct.php" method="post" id="search">
-      <input name="searchStruct" type="text" value="Structure name"/>
+      <input name="searchStruct" type="text" placeholder="Structure name"/>
       <input type="submit" value="Search" class="myButton"/>
     </form>
   </div>
@@ -47,6 +47,7 @@
       <?php
         }
       ?></div>
+
       <div class="info left">
         <div id="info">
           <div class="single-info">
@@ -94,8 +95,9 @@
         <div class="clear-fix"></div>
         <div class="slideButtBox">
         <?php if($i>0){ ?>
-        <button class="myButton" onclick="scrollRev(-1)">&#10094;</button>
-        <button class="myButton" onclick="scrollRev(+1)">&#10095;</button>
+        <button class="myButton left buttonleftfix" onclick="scrollRev(-1)">&#10094;</button>
+        <button class="myButton right buttonrightfix" onclick="scrollRev(+1)">&#10095;</button>
+        <div class="clear-fix"></div>
         <?php } ?>
         </div>
         <div class="clear-fix"></div>
@@ -111,6 +113,7 @@
       <div class="clear-fix"></div>
     </div>
     </div>
+    <div class="clear-fix"></div>
     </div>
 
   <script src="../js/slideShow.js" type="text/javascript"></script>

@@ -4,7 +4,7 @@ include 'connection.php';
 
 session_start();
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = sha1($_POST['password']);
 
 $conn = connOpen();
 $queryImg = "SELECT image FROM registration WHERE name = '$username' AND password = '$password'";

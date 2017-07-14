@@ -9,6 +9,8 @@ window.onload = function() {
     addRemoveLinks: true,
     autoProcessQueue: false,
     autoDiscover: false,
+    thumbnailWidth:50,
+    thumbnailHeight:50,
     previewsContainer: '#dropzonePreview',
     clickable: false,
 

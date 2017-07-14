@@ -6,11 +6,12 @@
   $address = $_POST['addr'];
   $conn = connOpen();
 
-  $pathImg = "/TWEB/img/default/defaultstructure.jpg";
+  $pathImg = "/TWEB/img/default/defaultstructure.jpeg";
   $target_dir = "uploadsStruct/";
-  $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-  if(is_uploaded_file($_FILES["file"]["tmp_name"])){
+
+  if((isset($_FILES["file"]["name"]))&&is_uploaded_file($_FILES["file"]["tmp_name"])){
+    $target_file = $target_dir . basename($_FILES["file"]["name"]);
     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
     $pathImg = "/TWEB/php/".$target_file;
     $query = "INSERT INTO structure (name,address,image) VALUES  ('$struct','$address', '$pathImg')";

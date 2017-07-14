@@ -1,11 +1,20 @@
 body{
-  background-image: url("../img/tweb-back-mypage.jpeg");
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  margin-top: 0%;
+  margin-top: 80px;
   margin-left: 0%;
   margin-right: 0%;
+}
+
+.background-container{
+  background-image: url("../img/tweb-back-mypage.jpg");
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
 
 .navbar{
@@ -14,6 +23,9 @@ body{
     background-color: #248f24;
     width: 100%;
     height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 99999999;
 }
 
 #logoImg{
@@ -39,20 +51,73 @@ body{
   margin-top: 50px;
 }
 
-.portrait{
-  position: relative;
-
+.container{
+  border: 0px dotted black;
+  padding: 5px;
+  margin-top: 20px;
 }
 
-#structImg{
-  position: absolute;
+.content{
+  background-color: white;
+  box-shadow: 10px 10px 5px #4f2b2b;
+  border: 0px dotted red;
+  padding: 20px 5px;
+  min-height: 500px;
+}
+
+@media(min-width:480px){
+  .content{
+    margin: 0px 100px 0px 100px;
+  }
+}
+
+.box{
+  min-height: 10px;
+  clear: both;
+  margin-top: 5px;
+}
+
+.portrait{
+clear: both;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+.buttonleftfix{
+  margin-left: 10px;
+}
+
+.buttonrightfix{
+    margin-right: 10px;
+}
+
+.info{
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.single-info{
+  clear: both;
+  padding: 3px;
+}
+
+.infop{
+  width: 100px;
+}
+
+#personalImg{
   width: 151px;
   height: 120px;
-  margin-left: 5%;
-  margin-top: 6%;
-  padding-left: 25px;
-  padding-top: 22px;
+  padding-left: 5px;
+  padding-top: 5px;
 }
+
 #frameImg{
   position: absolute;
   width: 200px;
@@ -61,19 +126,12 @@ body{
 }
 
 #info{
-  position: absolute;
   font-size: 25px;
   font-family: sans-serif;
-  float: right;
-  margin-top: 6%;
-  padding-left: 290px;
-  padding-top: 5px;
 }
 
 .review-container{
-  padding-top: 25%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-top: 10px;
 }
 
 #textRev{
@@ -89,4 +147,8 @@ body{
   margin-top: 5px;
   border: 2px solid black;
   padding: 13px;
+}
+
+.clear-fix{
+  clear:both;
 }
