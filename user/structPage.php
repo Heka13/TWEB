@@ -44,7 +44,7 @@
         foreach ($conn->query($query) as $result) {
      ?>
      <div id="nameVisitor">
-       From: 
+       From:
        <?php
          echo $result['nameVisitor'];
        ?>

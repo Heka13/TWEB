@@ -26,5 +26,5 @@
     connClose($conn);
     $_SESSION['name'] = $username;
     $_SESSION['image'] = $pathImg;
-    header("Location:../user/myPage.php");
+   header("Location:../user/myPage.php");
   }
