@@ -38,7 +38,13 @@
                   ORDER BY insertTime DESC";
         foreach ($conn->query($query) as $result) {
      ?>
-     <div>
+     <div id="nameVisitor">
+       From:
+       <?php
+         echo $result['nameVisitor'];
+       ?>
+     </div>
+     <div id="rev">
        <?php
          echo $result['nameVisitor']." ".$result['review'];
        ?>
